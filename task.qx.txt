@@ -1,0 +1,10 @@
+# Quantumult X：rewrite 与 cron 都指向同一个 sfexpress.js
+
+[rewrite_local]
+^https:\/\/ccsp-egmas\.sf-express\.com\/cx-app-member\/member\/app\/user\/universalSign url script-request-body sfexpress/sfexpress.js
+
+[task_local]
+4 0 * * * sfexpress/sfexpress.js, tag=顺丰速运, img-url=https://raw.githubusercontent.com/Orz-3/task/master/sfexpress.png, enabled=true
+
+[mitm]
+hostname = ccsp-egmas.sf-express.com, mcs-mimp-web.sf-express.com
